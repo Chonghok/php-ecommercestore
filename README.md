@@ -9,7 +9,7 @@ This is a fully functional e-commerce website built as a university assignment. 
 - Order placement
 - Admin dashboard 
 
-## Technologies Used
+## Programming Languages and Database
 - PHP
 - MySQL
 - HTML, CSS, JavaScript
