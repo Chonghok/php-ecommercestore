@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-margin-top: 120px;
+}
+body{
+    height: fit-content;
+}
+header{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.103);
+    background-color: white;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+}
+.header-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.logo-menu{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.logo-menu img{
+    width: 150px;
+    margin-left: 20px;
+}
+.logo-menu ul{
+    display: flex;
+    list-style: none;
+}
+.logo-menu li{
+    margin: 0px 10px;
+}
+.logo-menu nav a{
+    text-decoration: none;
+    color: rgb(0, 0, 50);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 2px 0px;
+    position: relative;
+}
+.logo-menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0; 
+    height: 2px;
+    background-color: rgb(253, 50, 50);
+    transition: width 0.4s ease, left 0.4s ease;
+}
+.logo-menu li a:hover::after{
+    width: 60%;
+    left: 20%; 
+}
+.logo-menu li a:hover, .icon a:hover, .logo-menu li #active{
+    color: rgb(253, 50, 50);
+}
+.logo-menu li #active::after {
+    width: 60%; 
+    left: 20%;
+}
+.icon{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+.icon a{
+    text-decoration: none;
+    margin: 0px 5px;
+    font-size: 22px;
+    color: rgb(0, 0, 50);
+}
+.icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.icon-container a{
+    margin: 0px 8px;
+}
+.icon-container .icon-count {
+    position: absolute;
+    top: 16px;
+    left: 71%;
+    background-color: rgb(253, 50, 50);
+    color: white;
+    border-radius: 100px;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: bold;
+}
+.wishlist-icon i{
+    font-size: 25px;
+}
+.wishlist-icon .icon-count{
+    top: 17.5px;
+    left: 58%;
+}
+.icon a.active {
+    color: rgb(253, 50, 50);
+}
+.icon-tooltip {
+    position: absolute;
+    top: 115%; /* right below the icon */
+    left: 50%;
+    transform: translateX(-50%) translateY(0px);
+    background-color: black;
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.icon-tooltip span {
+    font-weight: bold;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+}
+.icon-tooltip .tooltip-arrow {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid black;
+}
+.icon-container:hover .icon-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(8px);
+}
+
+
+
+.mini-toast {
+    position: absolute;
+    top: 100%; /* right below the icon */
+    left: 50%;
+    transform: translateX(-50%) translateY(0px);
+    background-color: black;
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.mini-toast span {
+    font-weight: bold;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+}
+.mini-toast .toast-arrow {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid black;
+}
+.mini-toast.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(8px);
+}
+
+
+
+
+
+
+
+
+
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    /* justify-content: center;
+    align-items: center; */
+    z-index: 1000;
+}
+
+/* Search box styling */
+.search-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-bar {
+    width: 60%;
+    background-color: white;
+    border-radius: 50px;
+    border: 1px solid gray;
+}
+.search-bar i {
+    font-size: 20px;
+    margin: 0px 10px;
+    color: rgb(60, 60, 60);
+}
+.search-bar input {
+    width: 90%;
+    padding: 10px 0px;
+    font-size: 15px;
+    border: none;
+    background: none;
+    outline: none;
+}
+/* When overlay is active (visible) */
+.search-overlay.active {
+    display: flex;
+}
+.result-container {
+    width: 50%;
+    height: fit-content;
+    max-height: 80vh;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 6px;
+    margin: 5.5% auto;
+    z-index: 1001;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(210, 210, 210) white;
+    display: none;
+}
+.result-container.show {
+    display: block;
+}
+.result-container h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    color: black;
+    margin: 12px 10px;
+}
+
+.result-item {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    cursor: pointer;
+}
+.result-image {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: white;
+    position: relative;
+}
+.result-image img {
+    width: 100%;
+    object-fit: cover;
+}
+.result-image .result-out-of-stock {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.332);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.result-out-of-stock .result-sold-out {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+    flex-direction: column;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.result-text {
+    margin: 0px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: black;
+}
+.result-text h4{
+    margin: 10px 0px;
+}
+.result-text p{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+.result-text .result-discount{
+    color: rgb(253, 50, 50);
+}
+.result-discount strike{
+    color: rgb(130, 130, 130);
+    margin-left: 8px;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.user-info {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 50);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.login-signup a {
+    text-decoration: none;
+    color: rgb(0, 0, 50);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+.user-info .username {
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(0, 0, 50);
+    transition: color 0.3s;
+}
+.user-info i {
+    transition: transform 0.3s, color 0.3s;
+}
+.user-info:hover .username, .user-info:hover i {
+    color: rgb(253, 50, 50);
+}
+.user-info .login-signup a:hover{
+    color: rgb(253, 50, 50);
+}
+/* Default dropdown menu hidden */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    flex-direction: column;
+    margin: 10px 0px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.199);
+    min-width: 85px;
+}
+
+.dropdown-menu a {
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+/* When dropdown is open */
+.dropdown-menu.show {
+    display: flex;
+}
+
+/* ADD: Highlight the username and arrow when menu is open */
+.user-dropdown.active .username, .user-dropdown.active i {
+    color: rgb(253, 50, 50); /* Active color */
+}
+
+/* ADD: Rotate the arrow */
+.user-dropdown.active .user-info i {
+    transform: rotate(180deg);
+}
+.dropdown-menu a:hover {
+    color: rgb(140, 140, 140);
+}
+/* .dropdown-menu .btn-logout{
+    color: rgb(253, 50, 50);
+}
+.dropdown-menu .btn-logout:hover {
+    color: rgb(241, 168, 168);
+} */
+

@@ -1,0 +1,125 @@
+.product-banner {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+.product-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.product-banner span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.142);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+
+.order-history {
+    margin: 80px auto;
+    width: 80%;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+.order-history thead {
+    background-color: rgb(238, 246, 255);
+}
+.order-history th, .order-history td {
+    border-bottom: 1px solid #ccc;
+    padding: 12px 0;
+    text-align: center;
+}
+.order-history td {
+    font-size: 14px;
+    padding: 15px 0;
+}
+
+.order-history td a {
+    text-decoration: none;
+    background-color: rgb(83, 154, 253);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+
+
+/* Order history detail */
+.history-detail {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 80%;
+    margin: 40px auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.order-item {
+    font-size: 16px;
+    color: #374151;
+    background-color: #f9fafb;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin: 10px 0;
+}
+
+.history-detail table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.history-detail th, .history-detail td {
+    padding: 12px 16px;
+    text-align: center;
+}
+.history-detail th {
+    background-color: #f9fafb;
+    border-radius: 8px;
+}
+.history-detail td {
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+.history-detail th:first-child, .history-detail td:first-child {
+    text-align: left;
+}
+
+
+.order-detail-actions-left {
+    margin-top: 20px;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.link-back {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(135deg, #4a90e2, #007aff);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 122, 255, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.link-back:hover {
+    background: linear-gradient(135deg, #3b7bd1, #0060c4);
+}

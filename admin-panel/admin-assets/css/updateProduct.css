@@ -1,0 +1,246 @@
+main {
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+  }
+  
+  .product-update-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  .btn-back {
+    background-color: #f3f4f6;
+    color: #1e293b;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .btn-back:hover {
+    background-color: #e2e8f0;
+  }
+  
+  .product-update-form-wrapper {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .product-update-form .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-update-form label {
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .product-update-form input,
+  .product-update-form select,
+  .product-update-form textarea {
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+  
+  .image-preview img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+  }
+  
+  #main-image-preview img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+  }
+  
+  #no-image-message {
+    height: 54px;
+  }
+  
+  #upload-main-image, #delete-main-image {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 10px; /* Space between buttons */
+  }
+  
+  /* Flex container to align buttons horizontally */
+  .form-group-buttons {
+    display: flex;
+    gap: 10px; /* Adjust space between buttons */
+    margin-top: 10px;
+  }
+  
+  #upload-main-image {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  #delete-main-image {
+    background-color: #f87171;
+    color: white;
+  }
+  
+  #upload-main-image:hover {
+    background-color: #2563eb;
+  }
+  
+  #delete-main-image:hover {
+    background-color: #ef4444;
+  }
+  
+  #upload-main-image:disabled {
+    background-color: #d1d5db;
+    cursor: not-allowed;
+  }
+  
+  .btn-create-submit {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-create-submit:hover {
+    background-color: #2563eb;
+  }
+  
+  
+
+  /* Subimage styling */
+  .subimage-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .no-subimages-message {
+    text-align: left;
+    color: #777;
+  }
+  
+  .subimage-row-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap to new line */
+    gap: 15px;
+    justify-content: flex-start; /* Align to the left */
+  }
+  
+  .subimage-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    box-sizing: border-box;
+    width: 220px; /* Fixed width to keep layout */
+  }
+  
+  .subimage-row img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .btn-remove, .btn-replace {
+    background-color: #f87171;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-remove:hover, .btn-replace:hover {
+    background-color: #ef4444;
+  }
+  
+  .add-subimage {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  input[type="file"] {
+    display: none; /* Hidden file input */
+  }
+  
+  .btn-upload {
+    background-color: #3b82f6;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-upload:hover {
+    background-color: #2563eb;
+  }
+  
+  .subimage-container .subimage-row .subimage-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .subimage-container .subimage-row .subimage-actions .btn-replace {
+    background-color: #34D399; /* A color to indicate replacement */
+  }
+  .subimage-actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between the buttons */
+  }
+  
+  .subimage-actions button {
+    width: 100%; /* Optional: Makes the buttons take full width of the container */
+  }
+  
+  .btn-update-submit {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    width: 148px;
+  }
+  
+  .btn-update-submit:hover {
+    background-color: #2563eb;
+  }
