@@ -16,6 +16,7 @@ This is a fully functional e-commerce website built as a university assignment. 
 
 ## Demo
 🌐 [Live Website](letsgear.infinityfreeapp.com)
+🌐 [Admin Dashboard](letsgear.infinityfreeapp.com/admin-panel)
 
 ## The Admin Account
 - Email: admin1@gmail.com
