@@ -15,8 +15,8 @@ This is a fully functional e-commerce website built as a university assignment. 
 - HTML, CSS, JavaScript
 
 ## Demo
-- 🌐 [Live Website](letsgear.infinityfreeapp.com)
-- 🌐 [Admin Dashboard](letsgear.infinityfreeapp.com/admin-panel)
+- 🌐 letsgear.infinityfreeapp.com
+- 🌐 letsgear.infinityfreeapp.com/admin-panel
 
 ## The User Account for main website
 - Email: user1@gmail.com
@@ -27,4 +27,5 @@ This is a fully functional e-commerce website built as a university assignment. 
 - Email: admin1@gmail.com
 - Username: admin1
 - Password: 1234
+
 
