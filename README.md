@@ -27,3 +27,4 @@ This is a fully functional e-commerce website built as a university assignment. 
 - Email: admin1@gmail.com
 - Username: admin1
 - Password: 1234
+
